@@ -30,7 +30,7 @@ class CacheImage {
         if (!file_exists($this->image_root . $new_image) || (filemtime($this->image_root . $filename) > filemtime($this->image_root . $new_image))) {
 
         	$image = Image::factory($this->image_root . $filename);
-            $image->resize(100, 100, Image::AUTO)->save($this->image_root . $new_image);
+            $image->resize($width, $height, Image::AUTO)->save($this->image_root . $new_image);
         }
         
         return URL::base() . $this->config['image_dir'] . $new_image;
