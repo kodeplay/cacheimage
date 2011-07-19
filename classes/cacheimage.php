@@ -19,7 +19,7 @@ class CacheImage {
 	
 	public function resize($filename, $width = 100 , $height = 100){
 		
-		if(!$filename)
+		if((!$filename) OR (!file_exists($this->image_root . $filename)))
 		  $filename = $this->config['default_filename'];
 		
         $info = pathinfo($filename);
