@@ -20,7 +20,7 @@ class CacheImage {
 	public function resize($filename, $width = 100 , $height = 100){
 		
 		if(!$filename)
-		  $filename = 'no_image.jpg';
+		  $filename = $this->config['default_filename'];
 		
         $info = pathinfo($filename);
         $extension = $info['extension'];

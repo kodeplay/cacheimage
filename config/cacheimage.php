@@ -14,5 +14,8 @@ return array
     // Path to the image cache directory you would like to use (Default: 'media/imagecache/')
     // Dont forget the trailing slash!
     'cache_dir' => 'cache',
+
+    //default filename will be used if not filename is specified
+    'default_filename' => 'no_image.jpg',
     
 );
