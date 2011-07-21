@@ -9,12 +9,22 @@ class CacheImage {
 	
 	public $image_root = NULL;
 	
+	private static $instance = NULL;
+	
 	public function __construct(){
 		
 		$this->config = Kohana::config('cacheimage');
 		
 		$this->image_root = DOCROOT . $this->config['image_dir'];
 		
+	}
+	
+	public static function factory(){
+		if(self::$instance !== NULL){
+			return $this->object;
+		} else {
+			return new self();
+		}
 	}
 	
 	public function resize($filename, $width = 100 , $height = 100){
