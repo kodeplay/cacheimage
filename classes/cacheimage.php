@@ -16,7 +16,7 @@ class CacheImage {
     }
     
     public static function instance(){
-        if(self::$instance !== NULL){
+        if(self::$instance === NULL){
             self::$instance = new CacheImage();
         }
         return self::$instance;
