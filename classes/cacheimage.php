@@ -22,18 +22,6 @@ class CacheImage {
         return self::$instance;
     }
 
-    /**
-     * Deprecated method - Please use the instance method above
-     * The name factory for singleton is semantically incorrect
-     */
-    public static function factory(){
-        if(self::$instance !== NULL){
-            return $this->object;
-        } else {
-            return new self();
-        }
-    }    
-    
     public function resize($filename, $width = 100 , $height = 100) {        
         if((!$filename) OR (!file_exists($this->image_root . $filename))) {
             $filename = $this->config['default_filename'];
@@ -51,6 +39,5 @@ class CacheImage {
         }
         
         return URL::base() . $this->config['image_dir'] . $new_image;        
-    }
-    
+    }    
 }
